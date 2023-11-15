@@ -4,7 +4,7 @@ _Images of turbulence. Wait... no. Is it turbulence of images?_
 
 ## Testimonials
 
-> This might actually get me to try Julia.
+> Whoa. This might actually get me to try Julia.
 
 _— Tim_
 
