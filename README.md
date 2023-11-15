@@ -2,13 +2,15 @@
 
 _Images of turbulence. Wait... no. Is it turbulence of images?_
 
-## Testimonials
+We use Oceananigans to simulate turbulence, mostly turbulent kittens. Make sense?
+
+### Testimonials
 
 > Whoa. This might actually get me to try Julia.
 
 _— Tim_
 
-## Installation
+### Installation
 
 Well, it's a [Julia](https://julialang.org/downloads/) package, so
 
@@ -23,7 +25,7 @@ or if you want to turbulence the kitten,
 $ git clone https://github.com/glwagner/TurbulentImages.jl.git
 ```
 
-## Try it
+### Try it
 
 ```bash
 $ julia --project examples/turbulent_kitten.jl
