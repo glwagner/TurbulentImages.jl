@@ -11,7 +11,7 @@ julia> ] # to enter package manager mode
 pkg> add https://github.com/glwagner/TurbulentImages.jl.git
 ```
 
-or just
+or if you want to turbulence the kitten,
 
 ```bash
 $ git clone https://github.com/glwagner/TurbulentImages.jl.git
