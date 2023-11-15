@@ -43,7 +43,7 @@ end
 function regrid_xy(grid, native_field)
 
     native_grid = native_field.grid
-    arch = architecture(native_grid)
+    arch = Oceananigans.Architectures.architecture(native_grid)
     Ix, Iy, Iz = size(native_grid)
     aspect = Ix / Iz
     Nx, Ny, Nz = size(grid)
