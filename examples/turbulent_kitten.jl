@@ -10,10 +10,11 @@ output_moviename = output_name * ".mp4"
 image_path = joinpath(@__DIR__, image_filename)
 
 simulation = turbulent_image_simulation(image_path, output_filename,
+                                        architecture = CPU(),
                                         advection = WENO(order=9),
                                         z_pixels = 128)
 
-simulation.stop_time = 2 # just _how_ turbulent do you want to get?
+simulation.stop_time = 2 # how turbulent does kitty want to get?
 run!(simulation)
 
 # Make a nice movie
