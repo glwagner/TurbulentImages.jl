@@ -91,7 +91,7 @@ function turbulent_image_simulation(img_filename,
         Nz = floor(Int, Nx / aspect)
     end
 
-    grid = RectilinearGrid(size=(Nx, Nz), z=(0, 1), x=(0, aspect),
+    grid = RectilinearGrid(size=(Nx, Nz), halo=(5, 5), z=(0, 1), x=(0, aspect),
                            topology = (Periodic, Flat, Bounded))
 
     bi = regrid_xy(grid, img)

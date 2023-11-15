@@ -2,12 +2,15 @@ using Oceananigans
 using TurbulentImages
 using GLMakie
 
-image_filename = "20231114-UND02051.jpg"
-output_name = "turbulent_dillon"
+image_filename = "kitten.jpg"
+output_name = "kitten"
+
 output_filename = output_name * ".jld2"
 output_moviename = output_name * ".mp4"
 
-simulation = turbulent_image_simulation(image_filename, output_filename, z_pixels=512)
+simulation = turbulent_image_simulation(image_filename, output_filename,
+                                        advection = WENO(order=9),
+                                        z_pixels = 512)
 run!(simulation)
 
 bt = FieldTimeSeries(output_filename, "b")
