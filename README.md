@@ -22,3 +22,10 @@ $ git clone https://github.com/glwagner/TurbulentImages.jl.git
 ```bash
 $ julia --project examples/turbulent_kitten.jl
 ```
+
+which makes
+
+But wait, kitty gets even more turbulent with `z_pixels = 512`!
+
+https://github.com/glwagner/TurbulentImages.jl/assets/15271942/33ebb4bd-f76a-402f-9019-e8e025a7bdb6
+
