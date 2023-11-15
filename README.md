@@ -34,7 +34,7 @@ $ julia --project examples/turbulent_kitten.jl
 
 which makes
 
-https://github.com/glwagner/TurbulentImages.jl/assets/15271942/da55aa98-68bc-49aa-ba07-0458f39c12c5
+https://github.com/glwagner/TurbulentImages.jl/assets/15271942/7786df99-36ce-4dc3-9943-729a0ee97972
 
 But wait, kitty gets even more turbulent with `z_pixels = 512`!
 
