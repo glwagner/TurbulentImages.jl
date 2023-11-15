@@ -12,6 +12,7 @@ image_path = joinpath(@__DIR__, image_filename)
 simulation = turbulent_image_simulation(image_path, output_filename,
                                         advection = WENO(order=9),
                                         z_pixels = 128)
+simulation.stop_time = 2
 run!(simulation)
 
 # Make a nice movie
