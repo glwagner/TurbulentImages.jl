@@ -17,8 +17,7 @@ simulation = turbulent_image_simulation(image_path, output_filename,
 simulation.stop_time = 2 # how turbulent does kitty want to get?
 run!(simulation)
 
-# Make a nice movie
-
+# Make a sweet movie that also goes in reverse
 bt = FieldTimeSeries(output_filename, "b")
 
 n = Observable(1)
@@ -32,7 +31,6 @@ ax = GLMakie.Axis(fig[1, 1], title="meow!")
 heatmap!(ax, bn, colormap=:grays, colorrange=(0, 1))
 hidedecorations!(ax)
 
-# Make a sweet movie that also goes in reverse
 stillframes = 10
 framerate = 24
 movingframes = length(bt.times)
