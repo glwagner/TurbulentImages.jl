@@ -13,7 +13,9 @@ function saturate!(vals, ϵ)
     return nothing
 end
 
-function image_to_initial_condition(filename; topology = (Periodic, Flat, Bounded))
+function image_to_initial_condition(filename;
+                                    architecture = CPU(),
+                                    topology = (Periodic, Flat, Bounded))
                                     
     color_img = load(filename)
     gray_img = Gray.(color_img)
@@ -25,7 +27,10 @@ function image_to_initial_condition(filename; topology = (Periodic, Flat, Bounde
     z = (0, 1)
     x = (0, aspect)
     
-    native_grid = RectilinearGrid(size=(Ix, Iz), z=(0, 1), x=(0, aspect); topology)
+    native_grid = RectilinearGrid(architecture; topology,
+                                  size = (Ix, Iz),
+                                  z = (0, 1),
+                                  x = (0, aspect))
 
     # Regrid image to new grid
     gray_field = CenterField(native_grid)
@@ -38,11 +43,13 @@ end
 function regrid_xy(grid, native_field)
 
     native_grid = native_field.grid
+    arch = architecture(native_grid)
     Ix, Iy, Iz = size(native_grid)
     aspect = Ix / Iz
     Nx, Ny, Nz = size(grid)
 
-    intermediate_grid = RectilinearGrid(size = (Ix, Nz),
+    intermediate_grid = RectilinearGrid(arch,
+                                        size = (Ix, Nz),
                                         z = (0, 1),
                                         x = (0, aspect),
                                         topology = Oceananigans.Grids.topology(grid))
@@ -68,6 +75,7 @@ end
 """
 function turbulent_image_simulation(img_filename,
                                     output_filename;
+                                    architecture = CPU(),
                                     advection = WENO(order=5),
                                     progress_schedule = IterationInterval(10),
                                     output_schedule = IterationInterval(5),
@@ -91,7 +99,11 @@ function turbulent_image_simulation(img_filename,
         Nz = floor(Int, Nx / aspect)
     end
 
-    grid = RectilinearGrid(size=(Nx, Nz), halo=(5, 5), z=(0, 1), x=(0, aspect),
+    grid = RectilinearGrid(architecture,
+                           size = (Nx, Nz),
+                           halo = (5, 5),
+                           z = (0, 1),
+                           x = (0, aspect),
                            topology = (Periodic, Flat, Bounded))
 
     bi = regrid_xy(grid, img)

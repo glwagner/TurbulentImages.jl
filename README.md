@@ -34,9 +34,10 @@ $ julia --project examples/turbulent_kitten.jl
 
 which makes
 
-https://github.com/glwagner/TurbulentImages.jl/assets/15271942/da55aa98-68bc-49aa-ba07-0458f39c12c5
+https://github.com/glwagner/TurbulentImages.jl/assets/15271942/0de378f8-6038-4615-b4d7-4222a2a90f94
 
-But wait, kitty gets even more turbulent with `z_pixels = 512`!
+As we know, the only thing cuter than a kitten is a _high-resolution kitten_ (try `z_pixels = 1024`)!
 
-https://github.com/glwagner/TurbulentImages.jl/assets/15271942/33ebb4bd-f76a-402f-9019-e8e025a7bdb6
+https://github.com/glwagner/TurbulentImages.jl/assets/15271942/82f56828-fe7b-4f36-b8a9-ba747941cb82
+
 
