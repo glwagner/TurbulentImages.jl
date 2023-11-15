@@ -41,7 +41,7 @@ function regrid_xy(grid, native_field)
 end
 
 function buoyant_image_simulation(img_filename, output_filename; Nz=128)
-    img = image_to_initial_conditions(img_filename)
+    img = image_to_initial_condition(img_filename)
 
     Ix, Iy, Iz = size(img)
     aspect = Ix / Iz
