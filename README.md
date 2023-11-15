@@ -4,7 +4,7 @@ _Images of turbulence. Wait... no. Is it turbulence of images?_
 
 ## Installation
 
-Well, it's a julia package, so
+Well, it's a [Julia](https://julialang.org/downloads/) package, so
 
 ```julia
 julia> ] # to enter package manager mode
