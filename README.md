@@ -17,6 +17,7 @@ Well, it's a [Julia](https://julialang.org/downloads/) package, so
 ```julia
 julia> ] # to enter package manager mode
 pkg> add https://github.com/glwagner/TurbulentImages.jl.git
+pkg> instantiate
 ```
 
 or if you want to turbulence the kitten,
