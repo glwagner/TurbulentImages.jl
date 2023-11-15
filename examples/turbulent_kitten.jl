@@ -25,14 +25,30 @@ Nx, Ny, Nz = size(simulation.model.grid)
 aspect = Nx / Nz
 
 fig = Figure(resolution=(600aspect, 600))
-ax = GLMakie.Axis(fig[1, 1])
+ax = GLMakie.Axis(fig[1, 1], title="meow!")
 heatmap!(ax, bn, colormap=:grays)
 hidedecorations!(ax)
 
-Nt = length(bt.times)
+# Make a sweet movie that also goes in reverse
+stillframes = 10
+framerate = 24
+movingframes = length(bt.times)
 
-record(fig, output_moviename, 1:Nt, framerate=48) do nn
-    @info string("Drawing frame $nn of $Nt...")
-    n[] = nn
+record(fig, output_moviename; framerate) do io
+    [recordframe!(io) for _ = 1:stillframes]
+
+    for nn in 1:movingframes
+        n[] = nn
+        recordframe!(io)
+    end
+
+    [recordframe!(io) for _ = 1:stillframes]
+
+    for nn in movingframes:-1:1
+        n[] = nn
+        recordframe!(io)
+    end
+
+    [recordframe!(io) for _ = 1:stillframes]
 end
 
