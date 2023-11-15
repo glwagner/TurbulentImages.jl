@@ -2,7 +2,7 @@
 
 _Images of turbulence. Wait... no. Is it turbulence of images?_
 
-We use Oceananigans to simulate turbulence, mostly turbulent kittens. Make sense?
+We use [Oceananigans](https://github.com/CliMA/Oceananigans.jl) to simulate turbulence, mostly turbulent kittens. Make sense?
 
 ### Testimonials
 
