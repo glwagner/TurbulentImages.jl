@@ -12,7 +12,8 @@ image_path = joinpath(@__DIR__, image_filename)
 simulation = turbulent_image_simulation(image_path, output_filename,
                                         advection = WENO(order=9),
                                         z_pixels = 128)
-simulation.stop_time = 2
+
+simulation.stop_time = 2 # just _how_ turbulent do you want to get?
 run!(simulation)
 
 # Make a nice movie
@@ -27,7 +28,7 @@ aspect = Nx / Nz
 
 fig = Figure(resolution=(600aspect, 600))
 ax = GLMakie.Axis(fig[1, 1], title="meow!")
-heatmap!(ax, bn, colormap=:grays)
+heatmap!(ax, bn, colormap=:grays, colorrange=(0, 1))
 hidedecorations!(ax)
 
 # Make a sweet movie that also goes in reverse
@@ -44,6 +45,8 @@ record(fig, output_moviename; framerate) do io
     end
 
     [recordframe!(io) for _ = 1:stillframes]
+
+    ax.title[] = "!woem"
 
     for nn in movingframes:-1:1
         n[] = nn
