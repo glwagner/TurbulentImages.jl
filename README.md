@@ -2,6 +2,12 @@
 
 _Images of turbulence. Wait... no. Is it turbulence of images?_
 
+## Testimonials
+
+> This might actually get me to try Julia.
+
+_— Tim_
+
 ## Installation
 
 Well, it's a [Julia](https://julialang.org/downloads/) package, so
