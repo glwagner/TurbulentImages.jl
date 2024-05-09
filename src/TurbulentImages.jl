@@ -83,7 +83,7 @@ function turbulent_image_simulation(img_filename,
                                     x_pixels = nothing,
                                     z_pixels = nothing)
 
-    img = image_to_initial_condition(img_filename)
+    img = image_to_initial_condition(img_filename; architecture)
     Ix, Iy, Iz = size(img)
     aspect = Ix / Iz
 
